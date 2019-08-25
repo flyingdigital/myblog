@@ -1,0 +1,23 @@
+{% extends 'template.html' %}
+
+{% block feelings %}
+
+    {% for feeling in feelings %}
+    <div class="list-group-item item_article">
+        <div class="row">
+            <div class="div_center col-xs-9">
+                <div class="list-group-item-heading div_article_title">
+                    <strong>
+                        {{ feelings.title }}
+                    </strong>
+                </div>
+                <p class="list-group-item-text div_article_content">
+                    {{ felling.textarea }}
+                </p>
+                <p>{{ feeling.time }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'template.html' %}
+
+
+{% block index %}
+    <!-- 文章列表 -->
+    {% for post in posts %}
+        <div class="list-group-item item_article">
+            <div class="row">
+                <div class="div_center col-xs-9">
+                    <div class="list-group-item-heading div_article_title">
+                        <strong>
+                            <a href="{% url "detail" post.blog_id %}">{{ post.title }}</a>
+                        </strong>
+                    </div>
+                    <p class="list-group-item-text div_article_content">
+                        {{ post.article | truncatechars:150 }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
