@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index,name='index'),
     path('detail/<int:blog_id>/',views.detail,name='detail'),
+    path('api_save/',views.api_save,name='api_save'),
     path('feelings/',views.feelings,name='feelings'),
 ]
 

@@ -6,7 +6,7 @@ import requests,datetime,json
 # Create your views here.
 def index(request):
     word = get_today_word()
-    feeling = models.Feelings.objects.filter(feelings_id=len(models.Feelings.objects.all()))
+    feeling = models.Feelings.objects.filter(feelings_id=int(len(models.Feelings.objects.all())))
     posts = models.Post.objects.all()
     categories = models.Category.objects.all()
     return render(request,'index.html',{"posts":posts,"categories":categories,'word':word,'feeling':feeling})
